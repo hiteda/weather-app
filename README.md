@@ -4,11 +4,15 @@ The Weather Comparison App lets you compare the 7-day forecast of multiple citie
 
 ## Requirements
 
-This is a React application, so React and node.js are required to run it. You will also need API keys for the [OpenWeatherMap API](https://openweathermap.org/api) and for [OpenCageData's geocoding API](https://opencagedata.com/). Once you have your API keys, add them to src/utilities/Keys.js.
+This is a React application, so React and node.js are required to run it. You will also need API keys for the [OpenWeatherMap API](https://openweathermap.org/api) and for [OpenCageData's geocoding API](https://opencagedata.com/). Once you have your API keys, add them to 'src/utilities/Keys.jss' and rename it to 'Keys.js'.
 
 ## Running the app
 
-In the project directory, you can run:
+In the project directory, first run:
+
+### `npm install`
+
+to install the necessary packages, then run:
 
 ### `npm start`
 
