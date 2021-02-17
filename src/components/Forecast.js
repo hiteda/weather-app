@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import Day from './Day'
-import Keys from '../utilities/Keys'
+const keys = require('../config/keys')
 
-let keys = new Keys();
 
 class Forecast extends Component {
 
@@ -55,7 +54,7 @@ class Forecast extends Component {
       .then((data) => {
           this.setState({forecast: data.daily})
       })
-      .catch(console.log);
+      .catch('getWeatherData() error: ' + console.log);
     }
   
     getGeocodeUrl(city, state) {
