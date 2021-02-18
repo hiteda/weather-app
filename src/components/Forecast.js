@@ -27,34 +27,30 @@ class Forecast extends Component {
         );
     }
 
-    componentDidMount() {
-        fetch(this.getGeocodeUrl(this.city, this.st), {
-         method: 'GET',
-         headers: {
-           'Content-Type': 'application/json'
-         } 
-        })
-        .then(res => res.json())
-        .then((data) => {
-          this.getWeatherData(data);
-        })
-        .catch(console.log);
+    async componentDidMount() {
+        const res = await fetch(this.getGeocodeUrl(this.city, this.st), {
+                                                            method: 'GET',
+                                                            headers: {
+                                                            'Content-Type': 'application/json'
+                                                        } 
+                                                    })
+        const data = await res.json();
+        this.getWeatherData(data)
+            .catch(console.log);
     }
     
-    getWeatherData(data){
-      var coords = this.getCoordinatesFromData(data);
-      var url = this.getWeatherUrl(coords);
-      fetch(url, {
-          method: 'GET',
-          headers: {
-              'Content-Type': 'application/json'
-          }
-      })
-      .then(res => res.json())
-      .then((data) => {
-          this.setState({forecast: data.daily})
-      })
-      .catch('getWeatherData() error: ' + console.log);
+    async getWeatherData(data){
+        var coords = this.getCoordinatesFromData(data);
+        var url = this.getWeatherUrl(coords);
+        const res = await fetch(url, {
+                                        method: 'GET',
+                                        headers: {
+                                            'Content-Type': 'application/json'
+                                        }
+                                    });
+        const json = await res.json();
+        this.setState({forecast: json.daily})
+            .catch('getWeatherData() error: ' + console.log);
     }
   
     getGeocodeUrl(city, state) {
