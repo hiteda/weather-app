@@ -17,7 +17,12 @@ class Forecast extends Component {
     render() {
         return (
             <div style={{ 'marginBottom': '20px' }}>
-                <center><h2>{this.city}, {this.st}</h2></center>
+                <div className='text-center'>
+                    <h2>{this.city}, {this.st} <button className="btn btn-light">
+                        <icon className="material-icons md-24">delete</icon>
+                        </button>
+                    </h2>
+                </div>
                 <div className="d-flex flex-row">
                     {this.state.forecast.map((day, index) => (
                         <Day day={day} index={index} key={index} />

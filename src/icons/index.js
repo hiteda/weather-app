@@ -4,6 +4,7 @@ import mostlyCloudy from './MostlyCloudy.png';
 import overcast from './Overcast.png';
 import partlyCloudy from './PartlyCloudy.png';
 import thunder from './Thunder.png';
+import unknown from './Unknown.png';
 
 export default {
     sunny,
@@ -11,5 +12,6 @@ export default {
     mostlyCloudy,
     overcast,
     partlyCloudy,
-    thunder
+    thunder,
+    unknown
 };
