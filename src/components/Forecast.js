@@ -16,7 +16,7 @@ class Forecast extends Component {
 
     render() {
         return (
-            <div>
+            <div style={{ 'marginBottom': '20px' }}>
                 <center><h2>{this.city}, {this.st}</h2></center>
                 <div className="d-flex flex-row">
                     {this.state.forecast.map((day, index) => (
