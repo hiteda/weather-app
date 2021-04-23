@@ -9,6 +9,7 @@ class App extends Component {
         <Forecast city={'Newberg'} st={'OR'} />
         <Forecast city={'Murfreesboro'} st={'TN'} />
         <Forecast city={'New Braunfels'} st={'TX'} />
+        <Forecast city={'Tulsa'} st={'OK'} />
       </div>
     );
   }

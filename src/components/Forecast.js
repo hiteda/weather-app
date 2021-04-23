@@ -18,9 +18,9 @@ class Forecast extends Component {
         return (
             <div>
                 <center><h2>{this.city}, {this.st}</h2></center>
-                <div class="d-flex flex-row">
+                <div className="d-flex flex-row">
                     {this.state.forecast.map((day, index) => (
-                        <Day day={day} index={index}/>
+                        <Day day={day} index={index} key={index} />
                     ))}
                 </div>
             </div>
@@ -33,7 +33,7 @@ class Forecast extends Component {
                                                             headers: {
                                                             'Content-Type': 'application/json'
                                                         } 
-                                                    })
+                                                    }).catch(console.log);
         const data = await res.json();
         this.getWeatherData(data)
             .catch(console.log);
@@ -47,10 +47,10 @@ class Forecast extends Component {
                                         headers: {
                                             'Content-Type': 'application/json'
                                         }
-                                    });
+                                    })
+                                    .catch('getWeatherData() error: ' + console.log);
         const json = await res.json();
-        this.setState({forecast: json.daily})
-            .catch('getWeatherData() error: ' + console.log);
+        this.setState({forecast: json.daily});
     }
   
     getGeocodeUrl(city, state) {
