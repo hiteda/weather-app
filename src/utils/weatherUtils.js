@@ -11,21 +11,32 @@ weekday[6] = "Saturday";
 
 export const iconFromId = (id) => {
     // See https://openweathermap.org/weather-conditions
-    if (id >= 200 && id < 300) {
+    if (id >= 200 && id < 300 || id === 771) {
         return icons.thunder;
     }
-    else if (id >= 300 && id < 600) {
-        // 300s are actually drizzle, could change icon for that
+    else if (id === 500 || id === 520 || id === 531 || id === 300 || id === 310) {
+        return icons.lightRain;
+    }
+    else if (id === 501 || id === 521 || id === 301 || id === 311 || id === 313 || id === 321) {
         return icons.rainy;
     }
-    else if (id >= 600 && id < 700) {
-        // TODO: Icon for snow
-        return icons.rainy;
+    else if (id >= 302 && id <= 522) {
+        return icons.heavyRain;
     }
-    else if (id >= 700 && id < 800) {
-        // Atmosphere
-        // TODO: Add icons for these. Mist, smoke, haze, dust, tornadoes, etc.
-        return icons.thunder;
+    else if (id === 601 || (id >= 611 && id <= 622)) {
+        return icons.snowy;
+    }
+    else if (id === 600) {
+        return icons.lightSnow;
+    }
+    else if (id === 602) {
+        return icons.heavySnow;
+    }
+    else if (id >= 701 && id <= 762) {
+        return icons.hazy;
+    }
+    else if (id === 781) {
+        return icons.tornado;
     }
     else if (id === 800) {
         return icons.sunny;
