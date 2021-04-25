@@ -11,7 +11,7 @@ weekday[6] = "Saturday";
 
 export const iconFromId = (id) => {
     // See https://openweathermap.org/weather-conditions
-    if (id >= 200 && id < 300 || id === 771) {
+    if ((id >= 200 && id < 300) || id === 771) {
         return icons.thunder;
     }
     else if (id === 500 || id === 520 || id === 531 || id === 300 || id === 310) {

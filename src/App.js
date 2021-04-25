@@ -13,7 +13,6 @@ class App extends Component {
   }
 
   handleClicked() {
-    console.log('click');
     this.setState({
       forecasts: [
         { city: 'Newberg', st: 'OR' },
