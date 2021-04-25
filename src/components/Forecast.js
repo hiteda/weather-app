@@ -19,7 +19,7 @@ class Forecast extends Component {
             <div style={{ 'marginBottom': '20px' }}>
                 <div className='text-center'>
                     <h2>{this.city}, {this.st} <button className="btn btn-light">
-                        <icon className="material-icons md-24">delete</icon>
+                        <i className="material-icons md-24">delete</i>
                         </button>
                     </h2>
                 </div>

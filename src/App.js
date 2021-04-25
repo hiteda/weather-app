@@ -1,17 +1,38 @@
 import React, { Component } from 'react';
-import Forecast from './components/Forecast';
+import ForecastList from './components/ForecastList';
 import Header from './components/Header';
 
 class App extends Component {
+  state = {
+    forecasts: []
+  }
+
+  constructor(props) {
+    super(props);
+    this.handleClicked = this.handleClicked.bind(this);
+  }
+
+  handleClicked() {
+    console.log('click');
+    this.setState({
+      forecasts: [
+        { city: 'Newberg', st: 'OR' },
+        { city: 'Henderson', st: 'NV' },
+        { city: 'Murfreesboro', st: 'TN' }
+      ]
+    });
+  }
 
   render() {
     return (
       <div>
         <Header />
-        <Forecast city={'Newberg'} st={'OR'} />
-        <Forecast city={'Murfreesboro'} st={'TN'} />
-        <Forecast city={'Douglasville'} st={'GA'} />
-        <Forecast city={'Tulsa'} st={'OK'} />
+        <ForecastList forecasts={this.state.forecasts} />
+        <div className='fixed-action-btn'>
+          <button onClick={this.handleClicked} className='btn-floating large red'>
+            <i className='material-icons'>add</i>
+          </button>
+        </div>
       </div>
     );
   }
